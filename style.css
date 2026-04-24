@@ -1,0 +1,68 @@
+/* CSS By Jessica Seapno */
+/* Color Palette
+
+Soft Pink: #BF8EB7
+Muted Purple: #343773
+Deep Teal: #1E3859
+Sky Blue: #62A1D9
+Cloudy White: #D9D8D7
+*/
+
+/* GLOBAL (base) MOBILE FIRST */
+body {
+    background-color: #1E3859;
+    color: #D9D8D7;
+    font-family: 'Monospace', sans-serif;
+}
+
+header {
+    background-color: #343773;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #BF8EB7;
+    padding: 10px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #D9D8D7;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #343773;
+    padding: 10px;
+    text-align: center;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 600px) {
+    nav ul li {
+        display: inline-block;
+    }
+}
+@media (min-width: 900px) {
+    main {
+        display: flex;
+        justify-content: space-around;
+    }
+}
