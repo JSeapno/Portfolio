@@ -21,9 +21,6 @@ body {
     color: #7B4686;
     font-family: 'Courier New', Courier, monospace;
     border: 30px solid transparent;
-    border-image-source: linear-gradient(to right, #2AB6DB, #BA29DB, #DB822E, #7B4686) 1 fill;
-    border-image-slice: fill;
-    border-image-repeat: repeat;
     background-image: url("images/istockphoto-1472539099-612x612.jpg");
     background-size: cover;
     background-attachment: fixed;
