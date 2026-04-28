@@ -11,37 +11,20 @@ Cloudy White: #D9D8D7
 */
 
 /* GLOBAL (base) MOBILE FIRST */
+/* I previously did have mobile queries at the top initially, but needed to move it to the end so that the mobile view of NAV is stacked, but on PC is still inline. */
 
 body {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     margin: 0;
     text-align: center;
     background-color:#3F565C;
     color: #7B4686;
     font-family: 'Courier New', Courier, monospace;
-    border: 30px solid transparent;
+    font-size: 15px;
     background-image: url("images/istockphoto-1472539099-612x612.jpg");
     background-size: cover;
     background-attachment: fixed;
-}
-
-@media screen and (min-width: 800px) {
-    body {
-        font-size: 18px;
-        background-color: #2AB6DB;
-        color:  #7B4686;
-    }
-    
-}
-
-@media screen and (min-width: 1200px) {
-    body {
-        font-size: 20px;
-        background-color: #91DB2A;
-        color: #7B4686;
-    }
-    
 }
 
 header, footer {
@@ -54,7 +37,7 @@ header, footer {
 
 nav {
     background-color: #DB822E;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
     border-style: groove;
     border-color: #91DB2A;
@@ -65,14 +48,20 @@ nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 nav ul li {
-    display: inline;
-    margin: 20px;
-    padding: 3px 20px;
+    flex: 0 1 40%;
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 10px 5px;
     border: groove;
     border-color:#D9D8D7;
+    box-sizing: border-box;
 }
 
 nav ul li a {
@@ -97,14 +86,15 @@ section {
     flex: 1;
     background-image: url("images/bg dim.jpg");
     color:#91DB2A;
-    font-size: 25px;
-    text-shadow: 25px 0px 15px blue;
+    font-size: 18px;
+    text-shadow: 5px 5px 15px blue;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
     min-width: 300px;
     max-width: 900px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    scrollbar-shadow-color: #BA29DB;
     margin: 20px auto;
     padding: 40px;
     border-style: groove;
@@ -125,3 +115,63 @@ section:hover {
     }
 }
 
+div.card-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+div.card-row section {
+    flex: 0 1 calc(25% - 20px);
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+a {
+    color: #BA29DB;
+    text-decoration: none;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a :hover {
+    color: #2AB6DB;
+    text-decoration: underline;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Tablet view */
+@media screen and (min-width: 600px) {
+    body {
+        background-color: #2AB6DB;
+    }
+    div.card-row {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row */
+    }
+}
+
+/* PC VIEW (900px and up) */
+@media screen and (min-width: 1200px) {
+    body {
+        background-color: #91DB2A;
+        border: 10px solid transparent;
+    }
+
+   
+    nav ul {
+        flex-wrap: nowrap; 
+        gap: 20px;
+    }
+
+    nav ul li {
+        flex: 0 1 auto;
+        width: auto;
+        padding: 3px 20px;
+        margin: 0;
+    }
+
+    
+    div.card-row {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
