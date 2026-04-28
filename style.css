@@ -25,6 +25,7 @@ body {
     background-image: url("images/istockphoto-1472539099-612x612.jpg");
     background-size: cover;
     background-attachment: fixed;
+    line-height: 1.4;
 }
 
 header, footer {
@@ -83,24 +84,32 @@ main {
 }
 
 section {
-    flex: 1;
     background-image: url("images/bg dim.jpg");
+    background-size: cover;
     color:#91DB2A;
     font-size: 18px;
-    text-shadow: 5px 5px 15px blue;
+    text-shadow: 5px 5px 15px #BA29DB;
+    display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 20px;
-    min-width: 300px;
-    max-width: 900px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    scrollbar-shadow-color: #BA29DB;
-    margin: 20px auto;
-    padding: 40px;
-    border-style: groove;
-    border-color: #91DB2A;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    margin-top: 0;
+    border: 3px groove #91DB2A;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-blend-mode:overlay;
+}
+
+section p {
+    margin: 0;
+    font-size: 0.9em;
 }
 
 section:hover {
@@ -115,17 +124,45 @@ section:hover {
     }
 }
 
-div.card-row {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+section h2, section p{
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 20px;
+    border-radius: 30px;
+    display: inline-block;
+    margin: 5px auto;
+    animation: slide-and-fade 0.5s ease-out;
 }
 
-div.card-row section {
-    flex: 0 1 calc(25% - 20px);
-    max-width: 100%;
-    box-sizing: border-box;
+.bento-container {
+  display: grid;
+  grid-template-columns: 1fr; 
+  grid-auto-rows: auto;                
+  gap: 20px;
+  padding: 10px;
 }
+
+.bento-item {
+  background-color: #3F565C;
+  border: 3px groove #91DB2A;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-feature {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.item-wide {
+  grid-column: span 2;
+}
+
+.item-tall {
+  grid-row: span 2;
+}
+
 
 a {
     color: #BA29DB;
@@ -151,7 +188,7 @@ a :hover {
 }
 
 /* PC VIEW (900px and up) */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 900px) {
     body {
         background-color: #91DB2A;
         border: 10px solid transparent;
@@ -171,7 +208,18 @@ a :hover {
     }
 
     
-    div.card-row {
+    .bento-container {
         grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 250px;
+    }
+    .item-feature {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    .item-wide {
+        grid-column: span 2;
+    }
+    .item-tall {
+        grid-row: span 2;
     }
 }
