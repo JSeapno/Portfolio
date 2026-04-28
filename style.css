@@ -196,7 +196,7 @@ a :hover {
     
     .bento-container {
         grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: (250px, auto);
+        grid-auto-rows: minmax(250px, auto);
     }
     .item-feature {
         grid-column: span 2;
