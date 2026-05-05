@@ -19,17 +19,18 @@ body {
     margin: 0;
     text-align: center;
     background-color:#3F565C;
-    color: #7B4686;
+    color: black;
     font-family: 'Courier New', Courier, monospace;
     font-size: 15px;
     background-image: url("images/istockphoto-1472539099-612x612.jpg");
     background-size: cover;
     background-attachment: fixed;
     line-height: 1.4;
+    
 }
 
 header, footer {
-    background-color: #7B4686;
+    background-color: black;
     color: #2AB6DB;
     padding: 20px;
     text-align: center;
@@ -37,7 +38,8 @@ header, footer {
 }
 
 nav {
-    background-color: #DB822E;
+    background-color: #7B4686;
+    margin: 20px auto;
     padding: 20px;
     text-align: center;
     border-style: groove;
@@ -66,14 +68,13 @@ nav ul li {
 }
 
 nav ul li a {
-    background-color: #DB822E;
-    color: #3F565C;
+    color: #91DB2A;
     text-decoration: none;
     font-weight: bold;
 }
 
 nav ul li a:hover {
-    color: #BA29DB;
+    color: #D9D8D7;
     text-decoration: underline;
     text-decoration-style: wavy;
     transition: transform 0.3s ease, color 0.3s ease;
@@ -197,9 +198,9 @@ a :hover {
 
     
     .bento-container {
-        grid-template-columns: repeat(4, 1fr);
-        grid-auto-rows: minmax(250px, auto);
-    }
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  justify-content: center;
+}
     .item-feature {
         grid-column: span 2;
         grid-row: span 2;
