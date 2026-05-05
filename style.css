@@ -148,8 +148,6 @@ section h2, section p{
   padding: 10px;
 }
 
-
-
 a {
     color: #BA29DB;
     text-decoration: none;
@@ -161,6 +159,10 @@ a :hover {
     color: #2AB6DB;
     text-decoration: underline;
     transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.item-wide {
+    grid-column: span 3;
 }
 
 /* Tablet view */
@@ -204,6 +206,7 @@ a :hover {
     }
     .item-wide {
         grid-column: span 2;
+        
     }
     .item-tall {
         grid-row: span 2;
