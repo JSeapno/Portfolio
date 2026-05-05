@@ -37,6 +37,14 @@ header, footer {
     border:5px groove #91DB2A;
 }
 
+header {
+    background-image: url("images/vaporwave wide.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: overlay;
+}
+
 nav {
     background-color: #7B4686;
     margin: 20px auto;
@@ -147,6 +155,8 @@ section h2, section p{
   grid-auto-rows: auto;                
   gap: 20px;
   padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 a {
@@ -156,18 +166,69 @@ a {
     text-decoration: none;
 }
 
-a :hover {
-    color: #2AB6DB;
-    text-decoration: underline;
-    transition: transform 0.3s ease, color 0.3s ease;
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 18px;
+    margin: 20px 0;
+    width: 100%;
 }
 
-.item-wide {
-    grid-column: span 3;
+.image-gallery img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+@media screen and (max-width: 500px) {
+    
+    main {
+        padding: 15px 10px;
+    }
+
+    header, footer {
+        padding: 16px 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    nav ul li {
+        flex: 1 1 100%;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .bento-container {
+        gap: 18px;
+        padding: 0 10px;
+    }
+
+    section {
+        min-height: auto;
+        padding: 16px 10px;
+        width: auto;
+    }
+
+    section h2, section p {
+        width: auto;
+        padding: 10px;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
 }
 
 /* Tablet view */
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 800px) {
     body {
         background-color: #2AB6DB;
     }
@@ -176,6 +237,13 @@ a :hover {
     }
 }
 
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+.item-wide {
+    grid-column: span 3;
+}
 /* PC VIEW (900px and up) */
 @media screen and (min-width: 1200px) {
     body {
@@ -195,12 +263,11 @@ a :hover {
         padding: 3px 20px;
         margin: 0;
     }
-
     
     .bento-container {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  justify-content: center;
-}
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        justify-content: center;
+    }
     .item-feature {
         grid-column: span 2;
         grid-row: span 2;
@@ -211,5 +278,10 @@ a :hover {
     }
     .item-tall {
         grid-row: span 2;
+    }
+
+    .image-gallery {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
     }
 }
