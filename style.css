@@ -129,6 +129,50 @@ section p {
     text-overflow: ellipsis;  /* Adds the ... at the end */
 }
 
+.creative-work-hero {
+    background-image: url("images/bg dim.jpg");
+    background-size: cover;
+    color: #91DB2A;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: overlay;
+    border-radius: 15px;
+    border: 3px groove #91DB2A;
+    padding: 20px;
+    margin: 0 auto 20px;
+    max-width: 1200px;
+}
+
+.creative-work-grid {
+    display: grid;
+    gap: 16px;
+    margin-top: 15px;
+}
+
+.creative-card {
+    background-color: rgba(0, 0, 0, 0.65);
+    border: 2px solid #BA29DB;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: left;
+}
+
+.creative-card h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    color: #2AB6DB;
+}
+
+.creative-card p {
+    display: block;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
+    text-overflow: initial;
+    margin: 0;
+    width: 100%;
+    color: #D9D8D7;
+}
+
 section:hover {
     transform: translateY(-5px);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
@@ -226,6 +270,10 @@ a {
         grid-template-columns: 1fr;
         gap: 16px;
     }
+
+    .creative-work-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Tablet view */
@@ -286,5 +334,9 @@ a {
     .image-gallery {
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 20px;
+    }
+
+    .creative-work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
