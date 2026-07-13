@@ -482,11 +482,11 @@ a {
     background-color: rgba(0, 0, 0, 0.58);
     border: 2px solid #2AB6DB;
     border-radius: 14px;
-    padding: 18px;
+    padding: 24px 22px;
     text-align: left;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     box-sizing: border-box;
     min-height: 220px;
     width: 100%;
