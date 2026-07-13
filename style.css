@@ -16,6 +16,7 @@ Cloudy White: #D9D8D7
 body {
     display: grid;
     grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
     margin: 0;
     text-align: center;
     background-color:#3F565C;
@@ -92,6 +93,8 @@ main {
     padding: 20px;
     max-width: 1400px;
     margin: 0 auto;
+    width: min(100%, 1400px);
+    box-sizing: border-box;
 }
 
 section {
@@ -297,6 +300,10 @@ a {
     .featured-grid {
         grid-template-columns: 1fr;
     }
+
+    .archive-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .featured-card {
@@ -408,6 +415,110 @@ a {
     justify-content: center;
     gap: 10px;
     box-sizing: border-box;
+}
+
+.archive-main {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding-bottom: 40px;
+    align-items: stretch;
+}
+
+.archive-hero,
+.archive-grid {
+    display: block;
+    width: 100%;
+    max-width: none;
+    min-height: auto;
+    height: auto;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    padding: 24px 20px;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.archive-hero {
+    background-image: url("images/bg dim.jpg");
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.72);
+    background-blend-mode: overlay;
+    border: 3px groove #91DB2A;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.archive-hero h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #2AB6DB;
+    background: none;
+    width: auto;
+    padding: 0;
+}
+
+.archive-hero p {
+    margin: 0 auto 8px;
+    max-width: 760px;
+    display: block;
+    background: rgba(0, 0, 0, 0.55);
+    padding: 10px 16px;
+    border-radius: 20px;
+    width: min(100%, 760px);
+}
+
+.archive-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+    padding: 0;
+}
+
+.archive-card {
+    background-color: rgba(0, 0, 0, 0.58);
+    border: 2px solid #2AB6DB;
+    border-radius: 14px;
+    padding: 18px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+    min-height: 220px;
+    width: 100%;
+    margin: 0;
+    height: auto;
+}
+
+.archive-card h3 {
+    margin: 0;
+    color: #91DB2A;
+}
+
+.archive-card p {
+    margin: 0;
+    color: #D9D8D7;
+    display: block;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
+    text-overflow: initial;
+}
+
+.archive-links {
+    margin: 0;
+    padding-left: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.archive-links li {
+    color: #D9D8D7;
 }
 
 .process-card h3 {
